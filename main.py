@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.Document.FILE_EXTENSION("txt"), handle_txt))
+    app.add_handler(app.add_handler(MessageHandler(filters.Document.MimeType("text/plain"), handle_txt))
 
     print("🤖 Bot is running...")
     app.run_polling()
